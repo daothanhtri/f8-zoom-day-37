@@ -1,4 +1,4 @@
-// src/pages/Profile/index.jsx
+
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./Profile.module.scss";
 import DefaultAvatar from "../../assets/images/avatar.png";

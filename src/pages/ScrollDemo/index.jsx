@@ -1,4 +1,4 @@
-// src/pages/ScrollDemo/index.jsx
+
 import React from "react";
 import GoToTop from "../../components/GoToTop";
 import styles from "./ScrollDemo.module.scss";

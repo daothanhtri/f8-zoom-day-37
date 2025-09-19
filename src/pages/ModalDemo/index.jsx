@@ -1,4 +1,4 @@
-// src/pages/ModalDemo/index.jsx
+
 import React, { useState } from "react";
 import Modal from "../../components/Modal";
 import styles from "./ModalDemo.module.scss";
