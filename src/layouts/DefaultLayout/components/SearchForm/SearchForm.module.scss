@@ -1,0 +1,131 @@
+@import "../../../../styles/base";
+
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px; 
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-dark-gray); 
+  border-radius: 999px; 
+  padding: 10px 16px; 
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  cursor: text;
+
+  &:focus-within {
+    border-color: var(--primary-color);
+    background-color: #fff;
+    box-shadow: 0 0 0 2px rgba(var(--primary-color), 0.2); 
+  }
+
+  input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 0.95rem; 
+    padding: 0 10px;
+    color: var(--text-color);
+
+    &::placeholder {
+      color: var(--text-light-color);
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--text-light-color);
+  }
+}
+
+.searchResults {
+  @extend %dropdown;
+  width: calc(100% - 0px);
+  left: 0;
+  right: 0;
+  max-height: 400px;
+  overflow-y: auto;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: 0;
+  padding: 0;
+  border-top: 1px solid var(--border-color);
+  box-shadow: 0 8px 20px var(--shadow-light);
+
+ 
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out,
+    visibility 0.3s ease-out;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  margin-bottom: 0.5rem; 
+  padding: 10px 16px; 
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.sectionTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-light-color);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.resultItem {
+  @extend %dropdown-item; 
+  gap: 12px;
+  padding: 10px 16px;
+
+  .itemIcon {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+  }
+
+  .itemContent {
+    flex-grow: 1;
+  }
+
+  .itemTitle {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 4px;
+  }
+
+  .itemDescription {
+    font-size: 0.8rem;
+    color: var(--text-light-color);
+    line-height: 1.4;
+  }
+}
+
+.viewMore {
+  display: block;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-top: 1px solid var(--border-color); 
+  &:hover {
+    background-color: var(--bg-light-gray);
+    text-decoration: none;
+  }
+}

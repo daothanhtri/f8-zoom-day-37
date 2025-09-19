@@ -1,0 +1,111 @@
+@import "../../../../styles/base";
+
+
+.wrapper {
+  position: relative;
+}
+
+.toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px; 
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: var(--bg-light-gray);
+  }
+
+  .bellIcon {
+    font-size: 1.3rem; 
+    color: var(--text-light-color);
+  }
+
+  .badge {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transform: scale(0.8);
+    transform-origin: top right;
+  }
+}
+
+.dropdownMenu {
+  @extend %dropdown;
+  right: 0;
+  min-width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 0;
+
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out,
+    visibility 0.3s ease-in-out;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.notificationItem {
+  @extend %dropdown-item;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 16px;
+
+  .itemIcon {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+  }
+
+  .itemContent {
+    flex-grow: 1;
+  }
+
+  .itemTitle {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: var(--text-color);
+  }
+
+  .itemTime {
+    font-size: 0.8rem;
+    color: var(--text-light-color);
+  }
+}
+
+.viewMore {
+  display: block;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-top: 1px solid var(--border-color);
+  &:hover {
+    background-color: var(--bg-light-gray);
+    text-decoration: none;
+  }
+}

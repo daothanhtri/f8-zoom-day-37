@@ -1,0 +1,21 @@
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+
+  img {
+    height: 36px;
+    margin-right: 8px;
+  }
+
+  span {
+    white-space: nowrap;
+    line-height: 1.2; 
+    font-size: 1.15rem;
+  }
+}

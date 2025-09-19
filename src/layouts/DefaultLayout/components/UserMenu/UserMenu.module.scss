@@ -1,0 +1,82 @@
+@import "../../../../styles/base";
+
+.wrapper {
+  position: relative;
+}
+
+.toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px; 
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &:hover {
+    background-color: var(--bg-light-gray);
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border-color); 
+  }
+
+  .userName {
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.95rem;
+  }
+
+  svg {
+    width: 12px;
+    height: 12px;
+    fill: var(--text-light-color);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &.open svg {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdownMenu {
+  @extend %dropdown;
+  right: 0;
+  min-width: 200px;
+  padding: 10px 0;
+
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out,
+    visibility 0.3s ease-in-out;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.menuItem {
+  @extend %dropdown-item;
+  gap: 10px;
+  padding: 10px 16px;
+
+  .itemIcon {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+  }
+
+  .itemText {
+    font-weight: 500;
+    color: var(--text-color);
+  }
+}

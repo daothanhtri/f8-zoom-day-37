@@ -1,0 +1,72 @@
+@import "../../../../styles/base.scss";
+
+.wrapper {
+  position: relative;
+}
+
+.toggle {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  &:hover {
+    background-color: var(--bg-light-gray);
+  }
+
+  span {
+    line-height: 1;
+  }
+
+
+  svg {
+    width: 12px;
+    height: 12px;
+    fill: var(--text-color);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &.open svg {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdownMenu {
+  @extend %dropdown;
+  right: 0;
+  min-width: 280px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out,
+    visibility 0.3s ease-out;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.courseItem {
+  @extend %dropdown-item;
+  gap: 10px;
+  img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  .courseTitle {
+    font-weight: 500;
+  }
+}
