@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import ReactDOM from "react-dom";
 import styles from "./Modal.module.scss";
@@ -84,7 +83,7 @@ function Modal({
     if (isOpen) {
       handleOpen();
     } else {
-      if (isVisible || isTransitioning) {
+      if (isVisible) {
         handleClose();
       }
     }

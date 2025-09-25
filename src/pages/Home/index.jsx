@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.scss";
@@ -16,6 +15,9 @@ function HomePage() {
         </Link>
         <Link to="/scroll-demo">
           <button>Demo Scroll</button>
+        </Link>
+        <Link to="/performance-demo">
+          <button>Demo Performance</button>
         </Link>
       </div>
     </div>

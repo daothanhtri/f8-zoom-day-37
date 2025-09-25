@@ -1,0 +1,34 @@
+.wrapper {
+  padding: 1rem;
+  background-color: #fff0f6; /* Light pink background */
+  border: 1px solid #ffadd2;
+  border-radius: 6px;
+  margin-top: 1rem;
+  text-align: center;
+
+  h4 {
+    color: #eb2f96; /* Dark pink text */
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+  }
+
+  li {
+    background-color: #fff;
+    border: 1px solid #f7e6f0;
+    padding: 0.5rem;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    color: var(--text-color);
+  }
+
+  .calculationResult {
+    margin-top: 1rem;
+    font-weight: 500;
+    color: #c41d7f; /* Deeper pink */
+  }
+}
