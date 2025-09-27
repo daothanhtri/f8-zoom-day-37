@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Modal from "../../components/Modal";
 import styles from "./ModalDemo.module.scss";
 
@@ -12,6 +11,27 @@ function ModalDemoPage() {
   const [isCustomStyleModalOpen, setIsCustomStyleModalOpen] = useState(false);
   const [isCallbackModalOpen, setIsCallbackModalOpen] = useState(false);
 
+  const modalRef = useRef(null);
+  const [isRefModalOpen, setIsRefModalOpen] = useState(false);
+
+  const handleOpenRefModal = () => {
+    modalRef.current.open();
+    setIsRefModalOpen(true);
+    console.log("Modal opened via ref.open()");
+  };
+
+  const handleCloseRefModal = () => {
+    modalRef.current.close();
+    setIsRefModalOpen(false);
+    console.log("Modal closed via ref.close()");
+  };
+
+  const handleToggleRefModal = () => {
+    modalRef.current.toggle();
+    setIsRefModalOpen((prev) => !prev);
+    console.log("Modal toggled via ref.toggle()");
+  };
+
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.title}>Demo Modal Component</h1>
@@ -23,7 +43,7 @@ function ModalDemoPage() {
       {/* Basic Modal */}
       <div className={styles.demoSection}>
         <h3>Modal cơ bản</h3>
-        <p>Modal đơn giản với các chức năng mở/đóng.</p>
+        <p>Modal đơn giản với nút mở/đóng.</p>
         <button onClick={() => setIsBasicModalOpen(true)}>
           Mở Modal Cơ bản
         </button>
@@ -161,6 +181,33 @@ function ModalDemoPage() {
             className={styles.closeButton}
           >
             Đóng Modal
+          </button>
+        </Modal>
+      </div>
+
+      {/*Modal with useImperativeHandle methods */}
+      <div className={styles.demoSection}>
+        <h3>Modal với `useImperativeHandle`</h3>
+        <p>
+          Điều khiển modal sử dụng các phương thức `open()`, `close()`,
+          `toggle()` từ ref.
+        </p>
+        <div className={styles.refButtons}>
+          <button onClick={handleOpenRefModal}>Open Modal via Ref</button>
+          <button onClick={handleCloseRefModal}>Close Modal via Ref</button>
+          <button onClick={handleToggleRefModal}>Toggle Modal via Ref</button>
+        </div>
+        <Modal
+          ref={modalRef}
+          isOpen={isRefModalOpen}
+          onRequestClose={() => setIsRefModalOpen(false)}
+          onAfterOpen={() => console.log("Ref Modal: onAfterOpen triggered")}
+          onAfterClose={() => console.log("Ref Modal: onAfterClose triggered")}
+        >
+          <h2>Modal Điều Khiển qua Ref</h2>
+          <p>Bạn đã mở modal này bằng ref.current.open()/toggle().</p>
+          <button onClick={handleCloseRefModal} className={styles.closeButton}>
+            Đóng Modal qua Ref
           </button>
         </Modal>
       </div>

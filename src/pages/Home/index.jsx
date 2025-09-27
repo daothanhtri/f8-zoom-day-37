@@ -19,6 +19,9 @@ function HomePage() {
         <Link to="/performance-demo">
           <button>Demo Performance</button>
         </Link>
+        <Link to="/focus-demo">
+          <button>Demo Focus</button>
+        </Link>
       </div>
     </div>
   );

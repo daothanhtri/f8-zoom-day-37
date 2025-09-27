@@ -11,7 +11,7 @@ function ExpensiveChild({ items }) {
     let longest = { name: "" };
     items.forEach((item) => {
       // Thêm delay giả lập tính toán nặng
-      // for(let i = 0; i < 100000; i++) {} // Giả lập delay
+      for(let i = 0; i < 100000; i++) {} // Giả lập delay
       if (item.name.length > longest.name.length) {
         longest = item;
       }
