@@ -7,6 +7,9 @@ import ModalDemoPage from "../../pages/ModalDemo";
 import ScrollDemoPage from "../../pages/ScrollDemo";
 import PerformanceDemoPage from "../../pages/PerformanceDemo";
 import FocusDemoPage from "../../pages/FocusDemo";
+import HOCDemoPage from "../../pages/HOCDemo";
+import RenderPropsDemoPage from "../../pages/RenderPropsDemo";
+import CustomHooksDemoPage from "../../pages/CustomHooksDemo";
 
 function AppRoutes() {
   return (
@@ -18,6 +21,9 @@ function AppRoutes() {
         <Route path="/scroll-demo" element={<ScrollDemoPage />} />
         <Route path="/performance-demo" element={<PerformanceDemoPage />} />
         <Route path="/focus-demo" element={<FocusDemoPage />} />
+        <Route path="/hoc-demo" element={<HOCDemoPage />} />
+        <Route path="/render-props-demo" element={<RenderPropsDemoPage />} />
+        <Route path="/custom-hooks-demo" element={<CustomHooksDemoPage />} />
       </Route>
     </Routes>
   );

@@ -22,6 +22,15 @@ function HomePage() {
         <Link to="/focus-demo">
           <button>Demo Focus</button>
         </Link>
+        <Link to="/hoc-demo">
+          <button>Demo HOC</button>
+        </Link>
+        <Link to="/render-props-demo">
+          <button>Demo Render Props</button>
+        </Link>
+        <Link to="/custom-hooks-demo">
+          <button>Demo Custom Hooks</button>
+        </Link>
       </div>
     </div>
   );
